@@ -1,0 +1,98 @@
+/* CSS for Project Details Page */
+.title {
+  text-align: center;
+}
+
+.project-details {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+.project-name {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  margin-bottom: 10px;
+}
+
+.project-author {
+  margin-bottom: 20px;
+}
+
+.section-heading {
+  font-size: 18px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.issue-list {
+  list-style: none;
+  padding: 0;
+}
+
+.issue-item {
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.issue-title {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.issue-description {
+  margin-bottom: 5px;
+}
+
+.delete-issue-btn {
+  background-color: #ff4f4f;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.delete-issue-btn:hover {
+  background-color: #ff1a1a;
+}
+
+.message {
+  text-align: center;
+  font-style: italic;
+  color: #888;
+}
+
+.back-link {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Additional Styling */
+.input-field {
+  margin-bottom: 10px;
+}
+
+.create-btn {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.create-btn:hover {
+  background-color: #45a049;
+}
+
+/* Add any additional custom styling based on your preferences */

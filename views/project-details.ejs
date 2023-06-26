@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Project Details</title>
+    <link rel="stylesheet" href="/css/project-details.css" />
+  </head>
+  <body>
+    <h1 class="title">Project Details</h1>
+
+    <% if (project) { %>
+    <div class="project-details">
+      <h2 class="project-name"><%= project.name %></h2>
+      <p class="project-description"><%= project.description %></p>
+      <p class="project-author">Author: <%= project.author %></p>
+
+      <% if (project.issues.length > 0) { %>
+      <h3 class="section-heading">Issues:</h3>
+      <ul class="issue-list">
+        <% project.issues.forEach(issue => { %>
+        <li class="issue-item">
+          <h4 class="issue-title"><%= issue.title %></h4>
+          <p class="issue-description"><%= issue.description %></p>
+          <form
+            class="delete-issue-form"
+            action="/projects/<%= project._id %>/issues/<%= issue._id %>?_method=DELETE"
+            method="POST"
+          >
+            <input type="hidden" name="_method" value="DELETE" />
+            <button type="submit" class="delete-issue-btn">Delete</button>
+          </form>
+        </li>
+        <% }) %>
+      </ul>
+      <% } else { %>
+      <p class="message">No issues found for this project.</p>
+      <% } %>
+
+      <h3 class="section-heading">Create New Issue:</h3>
+      <form
+        id="createIssueForm"
+        action="/projects/<%= project._id %>/issues"
+        method="POST"
+      >
+        <input
+          type="text"
+          name="title"
+          placeholder="Issue Title"
+          required
+          class="input-field"
+        />
+        <input
+          type="text"
+          name="description"
+          placeholder="Issue Description"
+          required
+          class="input-field"
+        />
+        <input
+          type="text"
+          name="label"
+          placeholder="Issue Label"
+          required
+          class="input-field"
+        />
+        <input
+          type="text"
+          name="author"
+          placeholder="Issue Author"
+          required
+          class="input-field"
+        />
+        <button type="submit" class="create-btn">Create</button>
+      </form>
+    </div>
+    <% } else { %>
+    <p class="message">Project not found.</p>
+    <% } %>
+
+    <a href="/projects" class="back-link">Back to Project List</a>
+
+    <script>
+      // Add JavaScript code here if needed
+    </script>
+  </body>
+</html>
