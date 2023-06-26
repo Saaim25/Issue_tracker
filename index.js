@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 });
 
 // Use the routes
-app.use("/projects", projectsRouter);
+app.use("/", projectsRouter);
 
 // Start the server
 const start = async () => {
