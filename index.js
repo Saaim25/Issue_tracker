@@ -29,7 +29,7 @@ app.use((req, res, next) => {
 app.use("/", projectsRouter);
 
 // Start the server
-const start = async () => {
+
 connectDB(process.env.Mongo_Url).then(() => {
   app.listen(process.env.port, () => {
     console.log(`Listening on port ${process.env.port}`);
