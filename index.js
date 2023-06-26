@@ -30,16 +30,8 @@ app.use("/", projectsRouter);
 
 // Start the server
 const start = async () => {
-  try {
-    // Connect to MongoDB
-    await connectDB(process.env.Mongo_Url);
-    app.listen(
-      process.env.port,
-      console.log(`Server is running on the port:${port}...`)
-    );
-  } catch (err) {
-    console.log("server error", err);
-  }
-};
-
-start();
+connectDB(process.env.Mongo_Url).then(() => {
+  app.listen(process.env.port, () => {
+    console.log(`Listening on port ${process.env.port}`);
+  });
+});
